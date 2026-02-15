@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PulseKey | Bio-Metric Security</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#00ff9d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                <h1>PULSE<span class="highlight">KEY</span></h1>
+            </div>
+            <div class="status">SYSTEM: <span id="sys-status">ONLINE</span></div>
+        </header>
+
+        <main>
+            <section class="visualizer-panel">
+                <h2>LIVE BIO-METRIC STREAM [MIT-BIH 100]</h2>
+                <div class="monitor-screen">
+                    <canvas id="ecgCanvas"></canvas>
+                    <div class="monitor-overlay">
+                        <div class="bpm">HR: <span id="heart-rate">72</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="control-panel">
+                <div class="input-group">
+                    <label>SENSITIVE PATIENT DATA</label>
+                    <input type="text" id="patientData" placeholder="ENTER MEDICAL RECORD DATA..." value="PATIENT: J. DOE | ID: 9942-X | COND: STABLE">
+                </div>
+
+                <div class="action-area">
+                    <button id="generateBtn" class="cyber-btn">
+                        <span class="btn-content">INITIALIZE BIO-KEY</span>
+                        <div class="glitch-effect"></div>
+                    </button>
+                    <div class="arrow">➜</div>
+                    <button id="encryptBtn" class="cyber-btn" disabled>
+                        <span class="btn-content">ENCRYPT DATA</span>
+                        <div class="glitch-effect"></div>
+                    </button>
+                </div>
+
+                <div class="results-grid">
+                    <div class="result-box">
+                        <h3>DERIVED SESSION KEY (SHA-256)</h3>
+                        <div class="code-display" id="keyDisplay">WAITING FOR BIOMETRIC INPUT...</div>
+                    </div>
+                    <div class="result-box local-crypto">
+                        <h3>ENCRYPTED OUTPUT (AES-256-CBC)</h3>
+                        <div class="code-display" id="outputDisplay">-- NO DATA --</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>SECURE MEDICAL IOT PROTOCOL v1.0 | HACKATHON BUILD</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

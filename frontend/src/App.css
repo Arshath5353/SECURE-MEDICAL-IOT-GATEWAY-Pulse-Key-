@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap');
+
+:root {
+  --bg: #080808;
+  --card-bg: #111111;
+  --text-primary: #ffffff;
+  --text-secondary: #666666;
+  --accent-green: #00ff41;
+  --accent-pink: #ff00ff;
+  --accent-yellow: #ffff00;
+  --border: #333333;
+  --font-head: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-head);
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bento-container {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 1.5rem;
+  width: 95vw;
+  height: 95vh;
+  padding: 1rem;
+  max-width: 1400px;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 1px solid var(--border);
+  transition: transform 0.2s;
+}
+
+/* Card 1: Title */
+.title-card {
+  grid-column: 1;
+  grid-row: 1;
+  justify-content: flex-end;
+}
+
+h1 {
+  font-size: 3.5rem;
+  line-height: 1;
+  margin: 0 0 1rem 0;
+  font-weight: 700;
+  color: #e0e0e0;
+}
+
+.subtitle {
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* Card 2: Status */
+.status-card {
+  grid-column: 2;
+  grid-row: 1;
+  align-items: center;
+  justify-content: center;
+  background: #1a1a1a;
+}
+
+.status-header {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  letter-spacing: 1px;
+}
+
+.huge-number {
+  font-size: 4rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.unit {
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-left: 0.5rem;
+}
+
+.active .huge-number {
+  color: var(--accent-pink);
+}
+
+.location-tag {
+  position: absolute;
+  bottom: 1.5rem;
+  width: 100%;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+}
+
+/* Card 3: Controls */
+.controls-card {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+}
+
+.card-header {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.button-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+}
+
+.bento-btn {
+  background: #1f1f1f;
+  border: none;
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-family: var(--font-mono);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.bento-btn:hover:not(:disabled) {
+  background: #333;
+  border-left: 4px solid var(--accent-green);
+}
+
+.bento-btn.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.bento-btn:disabled {
+  opacity: 0.3;
+}
+
+.btn-label {
+  font-size: 0.9rem;
+}
+
+.btn-status {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+}
+
+/* Card 4: Terminal */
+.terminal-card {
+  grid-column: 1 / span 2;
+  grid-row: 2 / span 2;
+  background: repeating-linear-gradient(0deg,
+      rgba(255, 255, 255, 0.02) 0px,
+      rgba(255, 255, 255, 0.02) 1px,
+      transparent 1px,
+      transparent 20px), #0d0d0d;
+}
+
+.terminal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: auto;
+}
+
+.data-block label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.data-value {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  word-break: break-all;
+  line-height: 1.4;
+  color: #a0a0a0;
+}
+
+.highlight {
+  color: var(--accent-green);
+}
+
+.key-value {
+  color: var(--accent-yellow);
+}
+
+/* Card 5: Logs */
+.logs-card {
+  grid-column: 3;
+  grid-row: 3;
+  max-height: 300px;
+}
+
+.log-scroller {
+  overflow-y: auto;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.log-line {
+  margin-bottom: 6px;
+}
+
+.terminal-cursor {
+  animation: blink 1s infinite;
+  color: var(--accent-pink);
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 1000px) {
+  .bento-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    height: auto;
+    overflow-y: auto;
+  }
+
+  .title-card,
+  .status-card,
+  .controls-card,
+  .terminal-card,
+  .logs-card {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}

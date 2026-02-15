@@ -1,0 +1,45 @@
+:root {
+  /* Use the technical font to match App.css */
+  font-family: 'Courier New', Courier, monospace;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* FORCE DARK MODE (Matches your App.css variables) */
+  color: #c9d1d9;
+  background-color: #0d1117;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  
+  /* ⚠️ CRITICAL FIX: */
+  /* Replaced 'display: flex' with 'display: block' */
+  /* This ensures the dashboard stretches to fill the whole screen */
+  display: block; 
+}
+
+/* --- Optional: Cool Custom Scrollbar --- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d1117;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00f2ff; /* Neon cyan hover effect */
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PulseKey | Bio-Metric Security</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="bg-gradient"></div>
+    <div class="container">
+        <header>
+            <div class="brand">
+                <h1>PulseKey <span class="badge">SECURE</span></h1>
+            </div>
+            <div class="header-status">
+                <span class="dot"></span> System Operational
+            </div>
+        </header>
+
+        <main>
+
+
+            <section class="control-panel">
+                <div class="input-group">
+                    <label>SENSITIVE PATIENT DATA</label>
+                    <input type="text" id="patientData" placeholder="ENTER MEDICAL RECORD DATA..."
+                        value="PATIENT: J. DOE | ID: 9942-X | COND: STABLE">
+                </div>
+
+                <div class="action-area">
+                    <button id="generateBtn" class="cyber-btn">
+                        <span class="btn-content">INITIALIZE BIO-KEY</span>
+                        <div class="glitch-effect"></div>
+                    </button>
+                    <div class="arrow">➜</div>
+                    <button id="encryptBtn" class="cyber-btn" disabled>
+                        <span class="btn-content">ENCRYPT DATA</span>
+                        <div class="glitch-effect"></div>
+                    </button>
+                </div>
+
+                <div class="results-grid">
+                    <div class="result-box">
+                        <h3>DERIVED SESSION KEY (SHA-256)</h3>
+                        <div class="code-display" id="keyDisplay">WAITING FOR BIOMETRIC INPUT...</div>
+                    </div>
+                    <div class="result-box local-crypto">
+                        <h3>ENCRYPTED OUTPUT (AES-256-CBC)</h3>
+                        <div class="code-display" id="outputDisplay">-- NO DATA --</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>SECURE MEDICAL IOT PROTOCOL v1.0 | HACKATHON BUILD</p>
+        </footer>
+    </div>
+    <script src="/static/js/script.js"></script>
+</body>
+
+</html>
