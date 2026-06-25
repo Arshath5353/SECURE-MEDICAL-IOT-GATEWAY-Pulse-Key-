@@ -54,7 +54,7 @@ Python (v3.8 or higher)
 
 1. Clone the Repository
 Bash
-git clone https://github.com/YOUR-USERNAME/secure-medical-iot.git
+git clone 
 cd secure-medical-iot
 2. Setup Backend (Python)
 Navigate to the backend folder and install dependencies:
